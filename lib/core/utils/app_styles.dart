@@ -1,28 +1,68 @@
 import 'package:flutter/material.dart';
+import 'package:school_system_abs/core/constant/app_colors.dart';
 
 abstract class AppStyles {
- 
- static TextStyle styleRegular20(BuildContext context) {
+  static TextStyle styleRegular20(BuildContext context) {
     return TextStyle(
       color: Colors.black,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontWeight: FontWeight.w400,
     );
   }
-   static TextStyle styleBold18(BuildContext context) {
+
+  static TextStyle styleBold18(BuildContext context) {
     return TextStyle(
       color: Colors.black,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeight.w600,
     );
-  } 
-    static TextStyle styleRegular18(BuildContext context) {
+  }
+
+  static TextStyle styleRegular16(BuildContext context) {
+    return TextStyle(
+      color: Colors.black,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w400,
+    );
+  }
+  static TextStyle styleSemiBold16(BuildContext context) {
+    return TextStyle(
+      color: Colors.black,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w600,
+    );
+  }
+  static TextStyle styleRegular18(BuildContext context) {
     return TextStyle(
       color: Colors.black,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeight.w400,
     );
-  } 
+  }
+
+  static TextStyle styleRegular32(BuildContext context) {
+    return TextStyle(
+      color: Colors.white,
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleBold48(BuildContext context) {
+    return TextStyle(
+      color: AppColors.secondaryColor,
+      fontSize: getResponsiveFontSize(context, fontSize: 48),
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleBold32(BuildContext context) {
+    return TextStyle(
+      color: AppColors.orangeColor,
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
+      fontWeight: FontWeight.w600,
+    );
+  }
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
@@ -40,7 +80,7 @@ double getScaleFactor(BuildContext context) {
   if (width < 600) {
     return width / 350;
   } else if (width < 1200) {
-    return width / 1000;
+    return width / 1400;
   } else {
     return width / 1700;
   }
