@@ -1,68 +1,28 @@
 import 'package:flutter/material.dart';
 
 abstract class AppStyles {
-  static TextStyle styleRegular12(BuildContext context) {
+ 
+ static TextStyle styleRegular20(BuildContext context) {
     return TextStyle(
       color: Colors.black,
-      fontSize: getResponsiveFontSize(context, fontSize: 12),
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontWeight: FontWeight.w400,
     );
   }
-
-  static TextStyle styleBold14(BuildContext context) {
+   static TextStyle styleBold18(BuildContext context) {
     return TextStyle(
-      color: Colors.grey,
-      fontSize: getResponsiveFontSize(context, fontSize: 14),
-      fontWeight: FontWeight.w700,
-    );
-  }
-
-  static TextStyle styleBold16(BuildContext context) {
-    return TextStyle(
-      color: Colors.white,
-      fontSize: getResponsiveFontSize(context, fontSize: 16),
-      fontWeight: FontWeight.w600,
-    );
-  }
-
-  static TextStyle styleregular16(BuildContext context) {
-    return TextStyle(
-      color: Colors.white,
-      fontSize: getResponsiveFontSize(context, fontSize: 16),
-      fontWeight: FontWeight.w400,
-    );
-  }
-
-  static TextStyle styleRegular18(BuildContext context) {
-    return TextStyle(
-      color: Colors.white,
-      fontSize: getResponsiveFontSize(context, fontSize: 18),
-      fontWeight: FontWeight.w400,
-    );
-  }
-
-  static TextStyle styleBold18(BuildContext context) {
-    return TextStyle(
-      color: Colors.white,
+      color: Colors.black,
       fontSize: getResponsiveFontSize(context, fontSize: 18),
       fontWeight: FontWeight.w600,
     );
-  }  static TextStyle styleBold24(BuildContext context) {
+  } 
+    static TextStyle styleRegular18(BuildContext context) {
     return TextStyle(
-      color: Colors.white,
-      fontSize: getResponsiveFontSize(context, fontSize: 24),
-      fontWeight: FontWeight.w600,
+      color: Colors.black,
+      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontWeight: FontWeight.w400,
     );
-  }
-
-
-  static TextStyle styleBold64(BuildContext context) {
-    return TextStyle(
-      color: Colors.white,
-      fontSize: getResponsiveFontSize(context, fontSize: 64),
-      fontWeight: FontWeight.w600,
-    );
-  }
+  } 
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
