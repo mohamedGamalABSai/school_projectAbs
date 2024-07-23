@@ -6,6 +6,7 @@ class ChangePagesProvider extends ChangeNotifier {
   int currentIndex = 0;
   List<Widget> pages = [
     const HomeViewBody(),
+    Text("jhghfhgfhhgfhgf")
    
   ];
   void changePage(int index) {

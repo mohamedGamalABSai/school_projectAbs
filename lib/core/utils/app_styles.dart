@@ -6,7 +6,7 @@ abstract class AppStyles {
     return TextStyle(
       color: Colors.black,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w200,
     );
   }
 
@@ -17,6 +17,14 @@ abstract class AppStyles {
       fontWeight: FontWeight.w600,
     );
   }
+static TextStyle styleBold20(BuildContext context) {
+    return TextStyle(
+      color: Colors.white,
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontWeight: FontWeight.w700,
+    );
+  }
+
 
   static TextStyle styleRegular16(BuildContext context) {
     return TextStyle(
@@ -78,7 +86,7 @@ double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
 double getScaleFactor(BuildContext context) {
   double width = MediaQuery.of(context).size.width;
   if (width < 600) {
-    return width / 350;
+    return width / 550;
   } else if (width < 1200) {
     return width / 1400;
   } else {
