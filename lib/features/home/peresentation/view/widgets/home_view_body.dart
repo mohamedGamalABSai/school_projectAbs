@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/custom_nav_bar.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/fifth_section.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/first_section.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/fotter.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/fourth_section_home.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/second_section.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/six_section.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/third_section_home_view.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -28,6 +31,13 @@ class HomeViewBody extends StatelessWidget {
             child: SizedBox(
           height: 40,
         )),
+        SliverToBoxAdapter(child: FifthSection()),
+        SliverToBoxAdapter(
+            child: SizedBox(
+          height: 40,
+        )),
+        SliverToBoxAdapter(child: SixSection()),
+        SliverToBoxAdapter(child: Footer()),
       ],
     );
   }

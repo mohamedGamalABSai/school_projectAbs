@@ -27,18 +27,14 @@ class CustomNavBar extends StatelessWidget implements PreferredSizeWidget {
                 image: AssetImage("assets/images/logo/logo.png"),
               )),
             ),
-            const SizedBox(
-              width: 32,
-            ),
             const TextContainer(),
-            const SizedBox(
-              width: 32,
-            ),
-            CustomButton(
-              width: ScreenSize.screeenWidth(context) * 0.12,
-              labelName: "Log in",
-              isBold: true,
-              onPressed: () {},
+            Flexible(
+              child: CustomButton(
+                width: ScreenSize.screeenWidth(context) * 0.12,
+                labelName: "Log in",
+                isBold: true,
+                onPressed: () {},
+              ),
             )
           ],
         )

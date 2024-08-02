@@ -11,51 +11,42 @@ class TextContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints:
-          BoxConstraints(maxWidth: ScreenSize.screeenWidth(context) * 0.5),
+      constraints: BoxConstraints(
+          maxWidth: ScreenSize.screeenWidth(context) * 0.7,
+          // minWidth: ScreenSize.screeenWidth(context) * 0.6,
+         ),
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(7)),
           color: AppColors.navColor),
       child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(
+          Flexible(
             child: CustomText(
               label: 'Home',
               index: 0,
             ),
           ),
-          SizedBox(
-            width: 58,
-          ),
-          Expanded(
+          Flexible(
             child: CustomText(
               label: 'About',
               index: 1,
             ),
           ),
-          SizedBox(
-            width: 58,
-          ),
-          Expanded(
+          Flexible(
             child: CustomText(
               label: 'Education',
               index: 2,
             ),
           ),
-          SizedBox(
-            width: 58,
-          ),
-          Expanded(
+          Flexible(
             child: CustomText(
               label: 'Student Life',
               index: 3,
             ),
           ),
-          SizedBox(
-            width: 58,
-          ),
-          Expanded(
+          Flexible(
             child: CustomText(
               label: 'Admissions',
               index: 4,
@@ -94,6 +85,7 @@ class CustomText extends StatelessWidget {
           ),
           changePagesProvider.currentIndex == index
               ? Container(
+                constraints: BoxConstraints(maxWidth: 100),
                   decoration: BoxDecoration(
                       color: AppColors.orangeColor,
                       borderRadius: BorderRadius.circular(5)),

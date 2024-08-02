@@ -13,11 +13,11 @@ class SeconItemImagesSlider extends StatelessWidget {
     CarouselController controller = CarouselController();
 
     return SizedBox(
-      width: ScreenSize.screeenWidth(context) * 0.8,
-      height: ScreenSize.screeenHeight(context) * 0.55,
+      width: ScreenSize.screeenWidth(context) * 1,
+      // height: ScreenSize.screeenHeight(context) * 0.7,
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           IconButton(
               onPressed: () {
@@ -27,16 +27,19 @@ class SeconItemImagesSlider extends StatelessWidget {
                 MyFlutterApp.arrowCircleLeft1,
                 color: AppColors.secondaryColor,
               )),
-          Expanded(
-            // width: ScreenSize.screeenWidth(context) * 0.7,
+          SizedBox(
+            width: ScreenSize.screeenWidth(context) * 0.8,
             child: CarouselSlider.builder(
               carouselController: controller,
               itemCount: 20,
               itemBuilder: (BuildContext context, int index, int realIndex) {
                 return const SeconSectionImages();
               },
-              options:
-                  CarouselOptions(enlargeCenterPage: true, viewportFraction: 1,),
+              options: CarouselOptions(
+                // aspectRatio: 1307 / 710,
+                enlargeCenterPage: true,
+                viewportFraction: 1,
+              ),
             ),
           ),
           IconButton(

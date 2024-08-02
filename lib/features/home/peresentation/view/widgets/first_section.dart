@@ -58,13 +58,15 @@ class FirstSectionItem extends StatelessWidget {
           const SizedBox(
             height: 32,
           ),
-          CustomButton(
-            onPressed: () {},
-            labelName: "Apply Now",
-            isBold: true,
-            borderRadius: 8,
-            width: ScreenSize.screeenWidth(context) * 0.1,
-            height: ScreenSize.screeenHeight(context) * 0.06,
+          Container(constraints: BoxConstraints(minWidth: 120),
+            child: CustomButton(
+              onPressed: () {},
+              labelName: "Apply Now",
+              isBold: true,
+              borderRadius: 8,
+              width: ScreenSize.screeenWidth(context) * 0.1,
+              height: ScreenSize.screeenHeight(context) * 0.06,
+            ),
           )
         ],
       ),

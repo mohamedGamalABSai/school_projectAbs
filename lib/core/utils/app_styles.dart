@@ -17,14 +17,14 @@ abstract class AppStyles {
       fontWeight: FontWeight.w600,
     );
   }
-static TextStyle styleBold20(BuildContext context) {
+
+  static TextStyle styleBold20(BuildContext context) {
     return TextStyle(
       color: Colors.white,
       fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontWeight: FontWeight.w700,
     );
   }
-
 
   static TextStyle styleRegular16(BuildContext context) {
     return TextStyle(
@@ -33,6 +33,7 @@ static TextStyle styleBold20(BuildContext context) {
       fontWeight: FontWeight.w400,
     );
   }
+
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
       color: Colors.black,
@@ -40,6 +41,7 @@ static TextStyle styleBold20(BuildContext context) {
       fontWeight: FontWeight.w600,
     );
   }
+
   static TextStyle styleRegular18(BuildContext context) {
     return TextStyle(
       color: Colors.black,
