@@ -30,6 +30,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_map:
+  latlong2:
+  location:
+  http:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -42,8 +46,10 @@ dependencies:
   flutter_svg: ^2.0.10+1
   carousel_slider: ^4.2.1
   url_launcher: ^6.3.0
+  flutter_map_cancellable_tile_provider: ^2.0.0
 dev_dependencies:
   flutter_test:
+
     sdk: flutter
 
   # The "flutter_lints" package below contains a set of recommended lints to

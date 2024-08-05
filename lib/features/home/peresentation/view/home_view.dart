@@ -16,10 +16,10 @@ class HomeView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
-        // appBar: const CustomNavBar(),
+        appBar: const CustomNavBar(),
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints constraints) {
-            double minHeight = ScreenSize.screeenHeight(context) * 0.6;
+            double minHeight = ScreenSize.screeenHeight(context) * 0.7;
 
             if (constraints.maxHeight < minHeight) {
               return Container(
