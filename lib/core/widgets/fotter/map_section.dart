@@ -56,15 +56,21 @@ class MapsSection extends StatelessWidget {
     );
   }
 
-  String _generateGoogleMapsUrl(double lat, double lon) {
-    return 'https://www.google.com/maps/place/${lat.toStringAsFixed(6)},${lon.toStringAsFixed(6)}/@${lat},${lon},17z';
-  }
+String _generateGoogleMapsUrl(double lat, double lon) {
+  final uri = Uri(
+    scheme: 'https',
+    host: 'www.google.com',
+    path: '/maps/place/',
+    queryParameters: {'@': '${lat},${lon},17z', 'q': '${lat.toStringAsFixed(6)},${lon.toStringAsFixed(6)}'},
+  );
+  return uri.toString();
+}
 
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+void _launchURL(String url) async {
+  if (await canLaunchUrl(Uri.parse(url))) {
+    await launchUrl(Uri.parse(url));
+  } else {
+    throw 'Could not launch $url';
   }
+}
 }

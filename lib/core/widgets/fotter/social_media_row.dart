@@ -13,44 +13,52 @@ class SocialMediaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Row(mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.facebook,
-            color: AppColors.whiteColor,
+        Flexible(
+          child: IconButton(
+            icon: const Icon(
+              FontAwesomeIcons.facebook,
+              color: AppColors.whiteColor,
+            ),
+            onPressed: () {
+              _launchUrl(_faceBookUrl);
+            },
           ),
-          onPressed: () {
-            _launchUrl(_faceBookUrl);
-          },
         ),
-        IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.twitter,
-            color: AppColors.whiteColor,
+        Flexible(
+          child: IconButton(
+            icon: const Icon(
+              FontAwesomeIcons.twitter,
+              color: AppColors.whiteColor,
+            ),
+            onPressed: () {
+              _launchUrl(_twitter);
+            },
           ),
-          onPressed: () {
-            _launchUrl(_twitter);
-          },
         ),
-        IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.instagram,
-            color: AppColors.whiteColor,
+        Flexible(
+          child: IconButton(
+            icon: const Icon(
+              FontAwesomeIcons.instagram,
+              color: AppColors.whiteColor,
+            ),
+            onPressed: () {
+              _launchUrl(_instgramUrl);
+            },
           ),
-          onPressed: () {
-            _launchUrl(_instgramUrl);
-          },
         ),
-        IconButton(
-          icon: const Icon(
-            FontAwesomeIcons.linkedin,
-            color: AppColors.whiteColor,
+        Flexible(
+          child: IconButton(
+            icon: const Icon(
+              FontAwesomeIcons.linkedin,
+              color: AppColors.whiteColor,
+            ),
+            onPressed: () {
+              _launchUrl(_linkedIn);
+            },
           ),
-          onPressed: () {
-            _launchUrl(_linkedIn);
-          },
         ),
       ],
     );
