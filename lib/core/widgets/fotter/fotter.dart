@@ -91,7 +91,7 @@ class Footer extends StatelessWidget {
                     const SizedBox(
                       height: 17,
                     ),
-                  const SocialMediaRow(),
+                    const SocialMediaRow(),
                     Spacer(),
                     Expanded(
                       child: Text(
@@ -119,29 +119,28 @@ class Footer extends StatelessWidget {
                                 ),
                                 fit: BoxFit.fill)),
                       ),
-                      const CustomInputField(
+                       CustomInputField(
                         labelText: "Email Address",
                         hintText: "Email Address",
                         backgroundColor: AppColors.navColor,
                         minLines: 1,
                         labelDisplay: false,
-                        isReq: true,
+                        isReq: true,height: ScreenSize.screeenHeight(context) * 0.08,
                         hintColor: AppColors.greyColor,
                       ),
                       const SizedBox(
                         height: 15,
                       ),
-                      SizedBox(
+                      CustomInputField(
                         height: ScreenSize.screeenHeight(context) * 0.15,
-                        child: const CustomInputField(
-                          labelText: "Message",
-                          hintText: "Message",
-                          isReq: false,
-                          backgroundColor: AppColors.navColor,
-                          isScrollable: true,
-                          maxLines: 3,
-                          labelDisplay: false,
-hintColor: AppColors.greyColor,                        ),
+                        labelText: "Message",
+                        hintText: "Message",
+                        isReq: false,
+                        backgroundColor: AppColors.navColor,
+                        isScrollable: true,
+                        maxLines: 3,
+                        labelDisplay: false,
+                        hintColor: AppColors.greyColor,
                       ),
                       const SizedBox(
                         height: 15,

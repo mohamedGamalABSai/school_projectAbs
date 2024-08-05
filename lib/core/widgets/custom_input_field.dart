@@ -24,7 +24,12 @@ class CustomInputField extends StatefulWidget {
   });
 
   final String labelText, hintText;
-  final bool suffixIcon, obscureText, showLabel, isScrollable, labelDisplay, isReq;
+  final bool suffixIcon,
+      obscureText,
+      showLabel,
+      isScrollable,
+      labelDisplay,
+      isReq;
   final bool? isDense;
   final TextEditingController? controller;
   final int minLines, maxLines;
@@ -42,7 +47,9 @@ class _CustomInputFieldState extends State<CustomInputField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(padding: EdgeInsets.all(8),
+    return Container(
+      
+      padding: const EdgeInsets.all(8),
       height: widget.height,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
@@ -75,7 +82,9 @@ class _CustomInputFieldState extends State<CustomInputField> {
           suffixIcon: widget.suffixIcon
               ? IconButton(
                   icon: Icon(
-                    _obscureText ? Icons.remove_red_eye : Icons.visibility_off_outlined,
+                    _obscureText
+                        ? Icons.remove_red_eye
+                        : Icons.visibility_off_outlined,
                     color: Colors.black54,
                   ),
                   onPressed: () {
