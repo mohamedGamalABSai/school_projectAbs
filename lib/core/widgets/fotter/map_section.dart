@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:flutter_map_cancellable_tile_provider/flutter_map_cancellable_tile_provider.dart';
-import 'package:school_system_abs/features/home/peresentation/view_model/map_view_model.dart';
+import 'package:school_system_abs/core/widgets/fotter/view_model/map_view_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MapsSection extends StatelessWidget {
@@ -61,7 +61,7 @@ String _generateGoogleMapsUrl(double lat, double lon) {
     scheme: 'https',
     host: 'www.google.com',
     path: '/maps/place/',
-    queryParameters: {'@': '${lat},${lon},17z', 'q': '${lat.toStringAsFixed(6)},${lon.toStringAsFixed(6)}'},
+    queryParameters: {'@': '$lat,$lon,17z', 'q': '${lat.toStringAsFixed(6)},${lon.toStringAsFixed(6)}'},
   );
   return uri.toString();
 }

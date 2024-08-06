@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:school_system_abs/core/constant/app_colors.dart';
 import 'package:school_system_abs/core/utils/function.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/custom_nav_bar.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/home_view_body.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/web_and_tab/custom_nav_bar.dart';
 import 'package:school_system_abs/features/home/peresentation/view_model/change_pages_view_model.dart';
 
 class HomeView extends StatelessWidget {
@@ -13,14 +12,51 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     ChangePagesProvider changePagesProvider =
         Provider.of<ChangePagesProvider>(context);
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppColors.whiteColor,
-        appBar: const CustomNavBar(),
-        body: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            double minHeight = ScreenSize.screeenHeight(context) * 0.7;
 
+    return Scaffold(
+      backgroundColor: AppColors.whiteColor,
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: AppColors.secondaryColor,
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('Item 1'),
+              onTap: () {
+                // Handle the tap
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Item 2'),
+              onTap: () {
+                // Handle the tap
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+      appBar: const CustomNavBar(),
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          double minHeight = ScreenSize.screeenHeight(context) * 0.7;
+    
+          // if (constraints.maxWidth <= 600) {
+          //   // Mobile layout
+          //   return Column(
+          //     children: [
+          //       Expanded(
+          //         child: Container(),
+          //       ),
+          //     ],
+          //   );
+          // } else {
             if (constraints.maxHeight < minHeight) {
               return Container(
                 height: minHeight,
@@ -31,11 +67,15 @@ class HomeView extends StatelessWidget {
                 ),
               );
             } else {
-              return changePagesProvider
-                  .pages[changePagesProvider.currentIndex];
+              return 
+                  changePagesProvider.pages[
+                        changePagesProvider.currentIndex];
+                  
+                
+              
             }
-          },
-        ),
+          }
+        // },
       ),
     );
   }

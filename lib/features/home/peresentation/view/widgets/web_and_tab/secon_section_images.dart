@@ -43,7 +43,10 @@ class SeconSectionImages extends StatelessWidget {
                     width: 0.4,
                     photoHeight: 0.1,
                     photoWidth: 0.1,
-                  ),SizedBox(height: 20,),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   CustomImage(
                     height: 0.25,
                     maxlines: 1,
@@ -69,26 +72,41 @@ class CustomImage extends StatelessWidget {
     required this.width,
     required this.photoHeight,
     required this.photoWidth,
+    this.titleFontSize = 16,
+    this.subTitleFontSize = 16,
+    this.space = 20,
+    this.spacetitle = 16,
+    this.containerColor = AppColors.navColor,
+    this.paddingNum = 15,
   });
-  final double height, width, photoHeight, photoWidth;
+  final double height,
+      width,
+      photoHeight,
+      photoWidth,
+      titleFontSize,
+      subTitleFontSize,
+      space,
+      spacetitle,
+      paddingNum;
   final int maxlines;
+  final Color containerColor;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: AppColors.navColor,
+        color: containerColor,
       ),
-      padding: const EdgeInsets.all(15.0),
+      padding: EdgeInsets.all(paddingNum),
       width: ScreenSize.screeenHeight(context) * width,
       height: ScreenSize.screeenHeight(context) * height,
       child: Column(
         children: [
           Container(
             height: ScreenSize.screeenHeight(context) * photoHeight,
-            // width: ScreenSize.screeenWidth(context) * photoWidth,
+            width: ScreenSize.screeenWidth(context) * photoWidth,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(5),
                 image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage("assets/images/images/Mask group.jpg"))),
@@ -98,20 +116,22 @@ class CustomImage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: space,
                 ),
                 Text(
                   "Lorem ipsum dolor sit.",
-                  style: AppStyles.styleSemiBold16(context),
+                  style: AppStyles.styleSemiBold16(context)
+                      .copyWith(fontSize: titleFontSize),
                 ),
-                const SizedBox(
-                  height: 17,
+                SizedBox(
+                  height: spacetitle,
                 ),
-                Flexible(
+                Expanded(
                   child: Text(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                    style: AppStyles.styleRegular16(context),
+                    style: AppStyles.styleRegular16(context)
+                        .copyWith(fontSize: subTitleFontSize),
                     maxLines: maxlines,
                     overflow: TextOverflow.ellipsis,
                   ),

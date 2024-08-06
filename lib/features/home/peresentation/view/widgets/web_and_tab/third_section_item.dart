@@ -7,32 +7,39 @@ class CustomThirdItem extends StatelessWidget {
       {super.key,
       required this.image,
       required this.num,
-      required this.subTitle});
+      required this.subTitle,
+       this.numFontSize=20,
+       this.subTitleFontSize=20});
   final String image, num, subTitle;
+  final double numFontSize, subTitleFontSize;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          height: ScreenSize.screeenHeight(context) * 0.1,
-          width: 80,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage(image),
-          )),
+        Flexible(
+          child: Container(
+            height: ScreenSize.screeenHeight(context) * 0.1,
+            width: 80,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage(image),
+            )),
+          ),
         ),
         const SizedBox(height: 10),
         Flexible(
           child: Text(
             num,
-            style: AppStyles.styleBold20(context),
+            style:
+                AppStyles.styleBold20(context).copyWith(fontSize: numFontSize),
           ),
         ),
         Flexible(
           child: Text(subTitle,
               style: AppStyles.styleRegular20(context)
-                  .copyWith(color: Colors.white)),
+                  .copyWith(color: Colors.white, fontSize: subTitleFontSize)),
         ),
       ],
     );

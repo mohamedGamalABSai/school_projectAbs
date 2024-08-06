@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:school_system_abs/core/constant/app_colors.dart';
 import 'package:school_system_abs/core/utils/app_styles.dart';
 import 'package:school_system_abs/core/utils/function.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/fourth_section_item.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/web_and_tab/fourth_section_item.dart';
 import 'package:school_system_abs/icons.dart';
 
 class FourthSectionHome extends StatelessWidget {

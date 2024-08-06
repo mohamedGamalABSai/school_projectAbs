@@ -32,8 +32,20 @@ abstract class AppStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontWeight: FontWeight.w400,
     );
+  } static TextStyle styleRegular12(BuildContext context) {
+    return TextStyle(
+      color: AppColors.orangeColor,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontWeight: FontWeight.w400,
+    );
   }
-
+ static TextStyle styleRegular10(BuildContext context) {
+    return TextStyle(
+      color: Colors.black,
+      fontSize: getResponsiveFontSize(context, fontSize: 10),
+      fontWeight: FontWeight.w400,
+    );
+  }
   static TextStyle styleSemiBold16(BuildContext context) {
     return TextStyle(
       color: Colors.black,
@@ -88,7 +100,7 @@ double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
 double getScaleFactor(BuildContext context) {
   double width = MediaQuery.of(context).size.width;
   if (width < 600) {
-    return width / 550;
+    return width / 350;
   } else if (width < 1200) {
     return width / 1400;
   } else {

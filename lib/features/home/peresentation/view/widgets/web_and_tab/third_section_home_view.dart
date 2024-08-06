@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:school_system_abs/core/constant/app_colors.dart';
 import 'package:school_system_abs/core/utils/app_styles.dart';
 import 'package:school_system_abs/core/utils/function.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/third_section_item.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/web_and_tab/third_section_item.dart';
 
 class ThirdSectionHomeView extends StatelessWidget {
   const ThirdSectionHomeView({super.key});

@@ -1,11 +1,12 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:school_system_abs/core/utils/app_routers.dart';
-import 'package:school_system_abs/features/home/peresentation/view/home_view.dart';
-import 'package:school_system_abs/features/home/peresentation/view_model/change_pages_view_model.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    // const MyApp(),
+    DevicePreview(enabled: true, builder: (context) => const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:location/location.dart';
@@ -20,16 +22,17 @@ class LocationProvider extends ChangeNotifier {
         Marker(
           width: 80,
           height: 80,
-          point: LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
-          child:  const Icon(
-            Icons.my_location,
-            color: Colors.blue,
+          point:
+              LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
+          child: const Icon(
+            Icons.location_on,
+            color: Colors.red,
           ),
         ),
       );
       notifyListeners();
     } on Exception catch (e) {
-      print("Error fetching location: $e");
+      log("Error fetching location: $e");
     }
 
     _location.onLocationChanged.listen((newLocation) {
@@ -38,9 +41,9 @@ class LocationProvider extends ChangeNotifier {
         width: 80,
         height: 80,
         point: LatLng(newLocation.latitude!, newLocation.longitude!),
-        child:  const Icon(
-          Icons.my_location,
-          color: Colors.blue,
+        child: const Icon(
+          Icons.location_on,
+          color: Colors.red,
         ),
       );
       notifyListeners();

@@ -1,44 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/custom_nav_bar.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/fifth_section.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/first_section.dart';
-import 'package:school_system_abs/core/widgets/fotter/fotter.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/fourth_section_home.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/second_section.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/six_section.dart';
-import 'package:school_system_abs/features/home/peresentation/view/widgets/third_section_home_view.dart';
+
+import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile_layout.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/tab_and_web_layout.dart';
+
+
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(child: FirstSectionHomeView()),
-        SliverToBoxAdapter(
-            child: SizedBox(
-          height: 40,
-        )),
-        SliverToBoxAdapter(child: SecondSectionHomeView()),
-        SliverToBoxAdapter(child: ThirdSectionHomeView()),
-        SliverToBoxAdapter(
-            child: SizedBox(
-          height: 40,
-        )),
-        SliverToBoxAdapter(child: FourthSectionHome()),
-        SliverToBoxAdapter(
-            child: SizedBox(
-          height: 40,
-        )),
-        SliverToBoxAdapter(child: FifthSection()),
-        SliverToBoxAdapter(
-            child: SizedBox(
-          height: 40,
-        )),
-        SliverToBoxAdapter(child: SixSection()),
-        SliverToBoxAdapter(child: Footer()),
-      ],
-    );
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      if (constraints.maxWidth > 600) {
+        return const TabAndWebLayout();
+      } else {
+        return const MobileLayout();
+      }
+    });
   }
 }
