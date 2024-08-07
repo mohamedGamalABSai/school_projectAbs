@@ -87,12 +87,12 @@ class Footer extends StatelessWidget {
                     const SizedBox(
                       height: 28,
                     ),
-                    const MapsSection(),
+                    const MapsSection(width: 0.4,),
                     const SizedBox(
                       height: 17,
                     ),
-                    const SocialMediaRow(),
-                    Spacer(),
+                    Flexible(child: const SocialMediaRow()),
+                    const Spacer(),
                     Expanded(
                       child: Text(
                         "© all copy rights are reserved and created to ASB.AI Technology ",

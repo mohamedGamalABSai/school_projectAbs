@@ -4,8 +4,8 @@ import 'package:school_system_abs/core/utils/app_routers.dart';
 
 void main() {
   runApp(
-    // const MyApp(),
-    DevicePreview(enabled: true, builder: (context) => const MyApp()),
+    const MyApp(),
+    // DevicePreview(enabled: true, builder: (context) => const MyApp()),
   );
 }
 

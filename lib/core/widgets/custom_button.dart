@@ -13,13 +13,14 @@ class CustomButton extends StatelessWidget {
       this.isBold = false,
       this.borderRadius = 15,
       this.height = 65,
-      this.width = 70});
+      this.width = 70,
+      this.fontSize = 18});
 
   final Color color, textColor;
   final String labelName;
   final void Function()? onPressed;
   final bool haveBorder, isBold;
-  final double borderRadius, height, width;
+  final double borderRadius, height, width, fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +44,11 @@ class CustomButton extends StatelessWidget {
           child: Text(
             labelName,
             style: isBold
-                ? AppStyles.styleBold18(context).copyWith(
-                    color: textColor,
-                  )
-                : AppStyles.styleRegular18(context).copyWith(
-                    color: textColor,
-                  ),
+                ? AppStyles.styleBold18(context)
+                    .copyWith(color: textColor, fontSize: fontSize)
+                : AppStyles.styleRegular18(context)
+                    .copyWith(color: textColor, fontSize: fontSize),
+            textAlign: TextAlign.center,
           ),
         ),
       ),

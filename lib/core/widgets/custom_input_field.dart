@@ -20,7 +20,7 @@ class CustomInputField extends StatefulWidget {
     this.hintColor,
     this.labelColor,
     this.labelDisplay = true,
-    this.isReq = false,
+    this.isReq = false, this.fontSize=16,
   });
 
   final String labelText, hintText;
@@ -34,7 +34,7 @@ class CustomInputField extends StatefulWidget {
   final TextEditingController? controller;
   final int minLines, maxLines;
   final Color backgroundColor;
-  final double? height;
+  final double? height, fontSize;
   final Color? hintColor;
   final Color? labelColor;
 
@@ -48,7 +48,6 @@ class _CustomInputFieldState extends State<CustomInputField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       padding: const EdgeInsets.all(8),
       height: widget.height,
       decoration: ShapeDecoration(
@@ -98,13 +97,13 @@ class _CustomInputFieldState extends State<CustomInputField> {
               ? const BoxConstraints(maxHeight: 33)
               : null,
           hintText: widget.hintText,
-          hintStyle: AppStyles.styleRegular16(context).copyWith(
-            color: widget.hintColor,
-          ),
+          hintStyle: AppStyles.styleRegular16(context)
+              .copyWith(color: widget.hintColor, fontSize: widget.fontSize),
           label: widget.labelDisplay
               ? Text(
                   widget.labelText,
                   style: AppStyles.styleRegular16(context).copyWith(
+                    fontSize: widget.fontSize,
                     color: widget.labelColor,
                   ),
                 )

@@ -16,6 +16,9 @@ class SecondSectionHomeView extends StatelessWidget {
       child: const Column(
         children: [
           SecondSectionHomeViewHeader(),
+          SizedBox(
+            height: 40,
+          ),
           SeconItemImagesSlider()
         ],
       ),

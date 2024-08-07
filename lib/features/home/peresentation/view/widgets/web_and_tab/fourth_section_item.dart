@@ -9,8 +9,8 @@ class FourthItemContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: ScreenSize.screeenWidth(context) * 0.2,
-      height: ScreenSize.screeenHeight(context) * 0.3,
+      width: ScreenSize.screeenWidth(context) * 0.5,
+      // height: ScreenSize.screeenHeight(context) * 0.25,
       decoration: BoxDecoration(
         color: AppColors.navColor,
         borderRadius: BorderRadius.circular(12),
@@ -19,7 +19,21 @@ class FourthItemContainer extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/images/images/image3.png"),
+          MediaQuery.of(context).size.width < 1100
+              ? SizedBox(
+                  child: Image.asset(
+                    "assets/images/images/image3.png",
+                    fit: BoxFit.fill,
+                  ),
+                )
+              : SizedBox(
+                  width: ScreenSize.screeenWidth(context) * 0.5,
+                  height: ScreenSize.screeenHeight(context) * 0.3,
+                  child: Image.asset(
+                    "assets/images/images/image3.png",
+                    fit: BoxFit.fill,
+                  ),
+                ),
           const ColumnItem(),
         ],
       ),
@@ -36,7 +50,7 @@ class ColumnItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0, left: 10.0, right: 10),
-      child: Column(
+      child: Column(mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -52,7 +66,7 @@ class ColumnItem extends StatelessWidget {
             height: 10,
           ),
           Text(
-            "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.",
+            "Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse .",
             overflow: TextOverflow.ellipsis,
             maxLines: 3,
             style: AppStyles.styleRegular16(context),

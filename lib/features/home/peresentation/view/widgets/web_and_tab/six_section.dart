@@ -61,7 +61,7 @@ class CustomSixSectionImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: ScreenSize.screeenHeight(context) * 0.2,
+      width: ScreenSize.screeenHeight(context) * 0.15,
       height: ScreenSize.screeenHeight(context) * 0.25,
       decoration:
           BoxDecoration(image: DecorationImage(image: AssetImage(image),fit: BoxFit.fill)),

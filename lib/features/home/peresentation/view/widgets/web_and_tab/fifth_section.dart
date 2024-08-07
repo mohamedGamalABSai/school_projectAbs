@@ -93,10 +93,12 @@ class AmericanEducationWidget extends StatelessWidget {
                       .copyWith(color: Colors.black),
                 ),
                 SizedBox(height: ScreenSize.screeenHeight(context) * 0.01),
-                Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                  maxLines: 2,
-                  style: AppStyles.styleRegular16(context),
+                Flexible(
+                  child: Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                    maxLines: 2,
+                    style: AppStyles.styleRegular16(context),
+                  ),
                 ),
               ],
             ),

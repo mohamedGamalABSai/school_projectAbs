@@ -14,43 +14,57 @@ class SeconItemImagesSlider extends StatelessWidget {
 
     return SizedBox(
       width: ScreenSize.screeenWidth(context) * 1,
-      // height: ScreenSize.screeenHeight(context) * 0.7,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          IconButton(
-              onPressed: () {
-                controller.previousPage(duration: const Duration(seconds: 1));
-              },
-              icon: const Icon(
-                MyFlutterApp.arrowCircleLeft1,
-                color: AppColors.secondaryColor,
-              )),
-          SizedBox(
-            width: ScreenSize.screeenWidth(context) * 0.8,
-            child: CarouselSlider.builder(
-              carouselController: controller,
-              itemCount: 20,
-              itemBuilder: (BuildContext context, int index, int realIndex) {
-                return const SeconSectionImages();
-              },
-              options: CarouselOptions(
-                // aspectRatio: 1307 / 710,
-                enlargeCenterPage: true,
-                viewportFraction: 1,
-              ),
-            ),
-          ),
-          IconButton(
-              onPressed: () {
-                controller.nextPage(duration: const Duration(seconds: 1));
-              },
-              icon: const Icon(
-                MyFlutterApp.arrowCircleRight,
-                color: AppColors.secondaryColor,
-              )),
-        ],
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth > 1100) {
+            return const SeconSectionImages();
+          } else {
+            return Row(
+              mainAxisSize: MainAxisSize.max,mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () {
+                      controller.previousPage(
+                          duration: const Duration(seconds: 1));
+                    },
+                    icon: const Icon(
+                      MyFlutterApp.arrowCircleLeft1,
+                      color: AppColors.secondaryColor,
+                    )),
+                // const SizedBox(
+                //   width: 20,
+                // ),
+                SizedBox(
+                  width: ScreenSize.screeenWidth(context) * 0.7,
+                  child: CarouselSlider.builder(
+                    carouselController: controller,
+                    itemCount: 20,
+                    itemBuilder:
+                        (BuildContext context, int index, int realIndex) {
+                      return const SeconSectionImages();
+                    },
+                    options: CarouselOptions(
+                      // aspectRatio: 1307 / 710,
+                      enlargeCenterPage: true,
+                      viewportFraction: 1,
+                    ),
+                  ),
+                ),
+                // const SizedBox(
+                //   width: 20,
+                // ),
+                IconButton(
+                    onPressed: () {
+                      controller.nextPage(duration: const Duration(seconds: 1));
+                    },
+                    icon: const Icon(
+                      MyFlutterApp.arrowCircleRight,
+                      color: AppColors.secondaryColor,
+                    )),
+              ],
+            );
+          }
+        },
       ),
     );
   }

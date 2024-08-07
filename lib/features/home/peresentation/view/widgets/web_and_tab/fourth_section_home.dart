@@ -30,12 +30,16 @@ class FourthSectionHome extends StatelessWidget {
           ),
           Center(
             child: SizedBox(
-              width: ScreenSize.screeenWidth(context) * 0.8,
-              height: ScreenSize.screeenHeight(context) * 0.55,
+              width: ScreenSize.screeenWidth(context) * 1,
+              height: MediaQuery.of(context).size.width < 1100
+                  ? ScreenSize.screeenHeight(context) * 0.35
+                  : ScreenSize.screeenHeight(context) * 0.55,
               child: Row(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  IconButton(
+                  if (MediaQuery.of(context).size.width >= 1100)
+                    IconButton(
                       onPressed: () {
                         controller.previousPage(
                             duration: const Duration(milliseconds: 300));
@@ -43,8 +47,10 @@ class FourthSectionHome extends StatelessWidget {
                       icon: const Icon(
                         MyFlutterApp.arrowCircleLeft1,
                         color: AppColors.secondaryColor,
-                      )),
-                  Expanded(
+                      ),
+                    ),
+                  SizedBox(
+                    width: ScreenSize.screeenWidth(context) * 0.9,
                     child: CarouselSlider.builder(
                       carouselController: controller,
                       itemCount: 20,
@@ -53,10 +59,13 @@ class FourthSectionHome extends StatelessWidget {
                         return const FourthItemContainer();
                       },
                       options: CarouselOptions(
-                          enlargeCenterPage: true, viewportFraction: 0.3),
+                          // aspectRatio: (417*1.33) / (496*1.33),
+                          enlargeCenterPage: true,
+                          viewportFraction: 0.3),
                     ),
                   ),
-                  IconButton(
+                  if (MediaQuery.of(context).size.width >= 1100)
+                    IconButton(
                       onPressed: () {
                         controller.nextPage(
                             duration: const Duration(milliseconds: 500));
@@ -64,7 +73,8 @@ class FourthSectionHome extends StatelessWidget {
                       icon: const Icon(
                         MyFlutterApp.arrowCircleRight,
                         color: AppColors.secondaryColor,
-                      )),
+                      ),
+                    ),
                 ],
               ),
             ),

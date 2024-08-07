@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/fifth_section_mobile.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/first_section_mobile.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/fourth_section_mobile.dart';
+import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/mobile_fotter.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/second_section_mobile.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/sixth_section_mobile.dart';
 import 'package:school_system_abs/features/home/peresentation/view/widgets/mobile/third_section_mobile.dart';
@@ -53,7 +54,15 @@ class MobileLayout extends StatelessWidget {
             height: 42,
           ),
         ),
-        SliverToBoxAdapter(child: SixthSectionMobile())
+        SliverToBoxAdapter(child: SixthSectionMobile()),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 42,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: MobileFotter(),
+        )
       ],
     );
   }

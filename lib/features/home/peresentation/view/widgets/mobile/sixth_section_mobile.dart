@@ -19,16 +19,16 @@ class SixthSectionMobile extends StatelessWidget {
                 .copyWith(color: AppColors.secondaryColor),
           ),
         ),
-        CustomImage(
+        const CustomImage(
           image: "assets/images/collab/collab1.png",
         ),
-        CustomImage(
+        const CustomImage(
           image:"assets/images/collab/collab2.png",
         ),
-        CustomImage(
+        const CustomImage(
           image: "assets/images/collab/collab3.png",
         ),
-        CustomImage(
+        const CustomImage(
           image:  "assets/images/collab/collab4.png",
         ),
       ],

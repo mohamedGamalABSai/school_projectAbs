@@ -23,11 +23,19 @@ class SecondSectionHomeViewHeader extends StatelessWidget {
             },
             child: Text(
               "Read more",
-              style: AppStyles.styleBold32(context),
+              style: _getTextStyle(context),
             ),
           )
         ],
       ),
     );
+  }
+  TextStyle _getTextStyle(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    if (screenWidth < 1100) {
+      return AppStyles.styleBold32(context).copyWith(fontSize: 26); // Use styleRegular20 for smaller screens
+    } else {
+      return AppStyles.styleBold32(context); // Use styleRegular32 for larger screens
+    }
   }
 }

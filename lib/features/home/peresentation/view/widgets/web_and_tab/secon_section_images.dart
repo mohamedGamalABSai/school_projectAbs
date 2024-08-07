@@ -10,53 +10,55 @@ class SeconSectionImages extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < 640) {
+        if (constraints.maxWidth > 1100) {
           // If the width is less than 600 pixels, display only the first CustomImage
-          return const CustomImage(
-            height: 0.55,
-            maxlines: 4,
-            width: 0.6,
-            photoHeight: 0.25,
-            photoWidth: 0.2,
+          return const SizedBox(
+            // width: ScreenSize.screeenWidth(context) * 1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomImage(
+                  height: 0.6,
+                  maxlines: 4,
+                  width: 0.6,
+                  photoHeight: 0.3,
+                  photoWidth: 0.8,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Column(
+                  children: [
+                    CustomImage(
+                      height: 0.3,
+                      maxlines: 4,
+                      width: 0.6,
+                      photoHeight: 0.12,
+                      photoWidth: 0.8,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    CustomImage(
+                      height: 0.3,
+                      maxlines: 4,
+                      width: 0.6,
+                      photoHeight: 0.12,
+                      photoWidth: 0.8,
+                    ),
+                  ],
+                )
+              ],
+            ),
           );
         } else {
           // If the width is greater than or equal to 600 pixels, display the Row with the Column
-          return const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomImage(
-                height: 0.55,
-                maxlines: 3,
-                width: 0.43,
-                photoHeight: 0.3,
-                photoWidth: 0.2,
-              ),
-              SizedBox(
-                width: 35,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomImage(
-                    height: 0.25,
-                    maxlines: 1,
-                    width: 0.4,
-                    photoHeight: 0.1,
-                    photoWidth: 0.1,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  CustomImage(
-                    height: 0.25,
-                    maxlines: 1,
-                    width: 0.4,
-                    photoHeight: 0.1,
-                    photoWidth: 0.1,
-                  ),
-                ],
-              ),
-            ],
+          return const CustomImage(
+            height: 0.55,
+            maxlines: 3,
+            width: 0.43,
+            photoHeight: 0.17,
+            photoWidth: 0.6,
           );
         }
       },
@@ -108,7 +110,7 @@ class CustomImage extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 image: const DecorationImage(
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                     image: AssetImage("assets/images/images/Mask group.jpg"))),
           ),
           Expanded(
